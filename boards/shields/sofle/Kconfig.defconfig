@@ -31,6 +31,6 @@ config ZMK_KSCAN_GPIO_DRIVER
 # Encoder debounce in ms to prevent skipped steps
 config ZMK_ENCODER_DEBOUNCE
     int "Encoder debounce time (ms)"
-    default 15
+    default 4
 
 endif
