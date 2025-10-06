@@ -23,8 +23,14 @@ config BT_MAX_CONN
 config BT_MAX_PAIRED
     default 6
 
+# Enable GPIO KSCAN driver (required for debounce)
+config ZMK_KSCAN_GPIO_DRIVER
+    bool "Enable GPIO KSCAN driver"
+    default y
+
 # Encoder debounce in ms to prevent skipped steps
 config ZMK_ENCODER_DEBOUNCE
+    int "Encoder debounce time (ms)"
     default 15
 
 endif
