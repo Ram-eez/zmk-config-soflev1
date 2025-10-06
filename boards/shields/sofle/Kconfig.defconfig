@@ -23,4 +23,8 @@ config BT_MAX_CONN
 config BT_MAX_PAIRED
     default 6
 
+# Encoder debounce in ms to prevent skipped steps
+config ZMK_ENCODER_DEBOUNCE
+    default 15
+
 endif
