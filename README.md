@@ -1,7 +1,9 @@
-# ZMK Config for Sofle v1 with Dongle Support  
-- Perform a **flash settings reset** on all three microcontrollers before flashing the firmware (this is required even for binding updates).  
-- Tested with **SuperMini nRF52840 Pro Micro**, also compatible with **nice!nano v2**.  
-- Always pair the **left side first**, followed by the **right side**.
+# ZMK Config for Sofle v1 (Dongle)
 
+The dongle connects to the computer; both halves connect to the dongle.
 
-![IMG_20241231_203754384](https://github.com/user-attachments/assets/3977727f-f988-4ef1-b40c-166a10dd19d0)
+- Built for `nice_nano_v2` (nice!nano v2, also works on SuperMini nRF52840 Pro Micro).
+- Flash `settings_reset` on **all three** boards first (dongle, left, right).
+- Then flash `sofle_dongle`, `sofle_left` and `sofle_right`.
+- Pair only the dongle with your computer.
+- To go back to a no-dongle setup: remove the `cmake-args` and the dongle from `build.yaml`, reset settings, and reflash.

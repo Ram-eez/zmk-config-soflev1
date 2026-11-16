@@ -1,15 +1,19 @@
 # This file generates the GitHub Actions matrix.
-# Traditional split keyboard setup - left half acts as central, right as peripheral
+# Dongle setup: the dongle connects to the computer, both halves connect to the dongle.
 ---
 include:
-  # Sofle left half (central/master)
+  # Dongle (central)
+  - board: nice_nano_v2
+    shield: sofle_dongle
+
+  # Halves, built as peripherals of the dongle
   - board: nice_nano_v2
     shield: sofle_left
-
-  # Sofle right half (peripheral)
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   - board: nice_nano_v2
     shield: sofle_right
+    cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
 
-  # Settings reset firmware (flash this first on both halves)
+  # Flash on all three boards before flashing the firmware above
   - board: nice_nano_v2
     shield: settings_reset
