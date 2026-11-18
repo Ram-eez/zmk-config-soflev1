@@ -5,6 +5,7 @@ include:
   # Dongle (central)
   - board: nice_nano_v2
     shield: sofle_dongle
+    cmake-args: -DCONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y
 
   # Halves, built as peripherals of the dongle
   - board: nice_nano_v2
